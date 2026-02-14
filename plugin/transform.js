@@ -37,6 +37,24 @@ function transform(input) {
     };
   }
 
+  // IDX_5 = /channels
+  if (input.IDX_5 && input.IDX_5.data && input.IDX_5.data[0]) {
+    data.channel = input.IDX_5.data[0];
+  }
+
+  // Enrich offline stream with channel data
+  if (data.stream && data.stream.type === "offline" && data.channel) {
+    if (data.channel.game_name) {
+      data.stream.game_name = data.channel.game_name;
+    }
+    if (data.channel.title) {
+      data.stream.title = data.channel.title;
+    }
+    if (data.channel.tags) {
+      data.stream.tags = data.channel.tags;
+    }
+  }
+
   return {
     data: data
   };

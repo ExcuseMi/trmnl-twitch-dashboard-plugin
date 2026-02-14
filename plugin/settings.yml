@@ -4,11 +4,17 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: "{% assign user_id = trmnl.plugin_settings.custom_fields_values.user_id | default: 0 | plus: 0 %}\r\n\r\n{% if user_id == 0 %}\r\nhttps://api.twitch.tv/helix/users\r\n{% else %}\r\nhttps://api.twitch.tv/helix/users?id={{user_id}}\r\nhttps://api.twitch.tv/helix/streams?user_id={{user_id}}\r\nhttps://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}\r\nhttps://api.twitch.tv/helix/chat/chatters?broadcaster_id={{user_id}}&moderator_id={{user_id}}\r\nhttps://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}\r\n{% endif %}"
+polling_url: "{% assign user_id = trmnl.plugin_settings.custom_fields_values.user_id | default: 0 | plus: 0 %}\r\n\r\n{% if user_id == 0 %}\r\nhttps://api.twitch.tv/helix/users\r\n{% else %}\r\nhttps://api.twitch.tv/helix/users?id={{user_id}}\r\nhttps://api.twitch.tv/helix/streams?user_id={{user_id}}\r\nhttps://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}\r\nhttps://api.twitch.tv/helix/chat/chatters?broadcaster_id={{user_id}}&moderator_id={{user_id}}\r\nhttps://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}\r\nhttps://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}\r\n{% endif %}"
 polling_headers: Authorization=Bearer {{oauth_access_token}}&Client-Id=v5iu0dpxojycn6aabbis0jr48hrjih
 polling_body: ''
 id: 243915
 custom_fields:
+- keyname: about_plugin
+  name: About This Plugin
+  field_type: author_bio
+  description: "Twitch Dashboard for TRMNL — monitor your stream status, viewers, followers, subscribers, and chatters at a glance."
+  category: entertainment,life
+  github_url: https://github.com/ExcuseMi/trmnl-twitch-dashboard-plugin
 - keyname: user_id
   field_type: number
   name: Twitch User Id
