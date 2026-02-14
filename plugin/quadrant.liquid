@@ -1,1 +1,77 @@
-{% render "main", trmnl:trmnl, data:data %}
+{% assign user_id = trmnl.plugin_settings.custom_fields_values.user_id | default: 0 | plus: 0 %}
+{% if user_id == 0 %}
+  {% render "no_user", trmnl:trmnl, data:data %}
+{% else %}
+
+  <div class="layout layout--stretch layout--col gap--xsmall">
+
+    <div class="item" style="align-items:flex-start;">
+      <img src="{{data.user.profile_image_url}}" class="icon image image-dither w--12 h--12" />
+      <div class="content">
+        <span class="title title--small">{{ data.user.display_name | default: "Unknown" }}</span>
+                {% if data.stream and data.stream.type == "live" %}
+          <span class="label label--inverted" style="margin-top: 4px;">
+            LIVE
+          </span>
+        {% else %}
+          <span class="label" style="margin-top: 4px;">Offline</span>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    {% if data.stream and data.stream.type == "live" %}
+      <span class="value value--small value--tnums" data-value-fit="true" data-value-format="true">{{ data.stream.viewer_count | default: "0" }} <span class="label label--small">viewers</span></span>
+      <span class="label"><svg class="w--6 h--6 m--1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 8.5C8 7.948 7.552 7.5 7 7.5S6 7.948 6 8.5V9H5.5C4.948 9 4.5 9.448 4.5 10S4.948 11 5.5 11H6V11.5C6 12.052 6.448 12.5 7 12.5S8 12.052 8 11.5V11H8.5C9.052 11 9.5 10.552 9.5 10S9.052 9 8.5 9H8V8.5Z" fill="#000"/><path d="M18 8C18 8.552 17.552 9 17 9S16 8.552 16 8 16.448 7 17 7 18 7.448 18 8Z" fill="#000"/><path d="M17 13C17.552 13 18 12.552 18 12S17.552 11 17 11 16 11.448 16 12 16.448 13 17 13Z" fill="#000"/><path d="M16 10C16 10.552 15.552 11 15 11S14 10.552 14 10 14.448 9 15 9 16 9.448 16 10Z" fill="#000"/><path d="M19 11C19.552 11 20 10.552 20 10S19.552 9 19 9 18 9.448 18 10 18.448 11 19 11Z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C10.188 3 7.962 3.258 6.218 3.509C3.943 3.837 2.091 5.517 1.61 7.788C1.341 9.059 1.077 10.562 1.016 11.82C.973 12.723.878 13.983.777 15.192.672 16.45 1.091 17.746 1.861 18.668 2.646 19.609 3.889 20.243 5.324 19.841 6.242 19.584 6.976 18.939 7.52 18.303 8.077 17.652 8.52 16.912 8.835 16.31 9.078 15.847 9.509 15.586 9.915 15.586H14.085C14.491 15.586 14.922 15.847 15.165 16.31 15.48 16.912 15.923 17.652 16.48 18.303 17.024 18.939 17.758 19.584 18.676 19.841 20.111 20.243 21.354 19.609 22.139 18.668 22.908 17.746 23.328 16.45 23.223 15.192 23.122 13.983 23.027 12.723 22.984 11.82 22.923 10.562 22.659 9.059 22.39 7.788 21.909 5.517 20.057 3.837 17.782 3.509 16.038 3.258 13.812 3 12 3ZM6.503 5.489C8.227 5.241 10.337 5 12 5S15.773 5.241 17.497 5.489C18.965 5.7 20.131 6.775 20.433 8.203 20.697 9.446 20.933 10.822 20.986 11.916 21.031 12.856 21.129 14.146 21.23 15.359 21.291 16.096 21.034 16.871 20.604 17.387 20.189 17.884 19.709 18.053 19.215 17.915 18.85 17.813 18.433 17.509 17.999 17.002 17.577 16.509 17.214 15.913 16.936 15.382 16.404 14.367 15.348 13.586 14.085 13.586H9.915C8.652 13.586 7.596 14.367 7.064 15.382 6.786 15.913 6.423 16.509 6.001 17.002 5.567 17.509 5.15 17.813 4.785 17.915 4.291 18.053 3.811 17.884 3.396 17.387 2.966 16.871 2.709 16.096 2.77 15.359 2.871 14.146 2.969 12.856 3.014 11.916 3.067 10.822 3.303 9.446 3.567 8.203 3.869 6.775 5.035 5.7 6.503 5.489Z" fill="#000"/></svg> {{ data.stream.game_name | default: "Unknown" }}</span>
+    {% else %}
+      <div class="item">
+        <div class="meta"></div>
+        <div class="content">
+          <span class="value value--small">Offline</span>
+          <span class="label label--small">Currently not streaming</span>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="divider"></div>
+
+    <div class="grid grid--cols-3 gap--xsmall" style="align-items:flex-start;">
+      <div class="item">
+        <div class="meta"></div>
+        <div class="content text--center">
+          <span class="value value--xsmall value--tnums" data-value-fit="true" data-value-format="true">{{ data.followers.total | default: "0" }}</span>
+          <span class="label label--small">Followers</span>
+          {% if data.followers.recent and data.followers.recent[0] %}
+            <span class="label label--underline">{{ data.followers.recent[0].user_name }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% if  data.subscribers.total > 0 %}
+      <div class="item">
+        <div class="meta"></div>
+        <div class="content text--center">
+          <span class="value value--xsmall value--tnums" data-value-fit="true" data-value-format="true">{{ data.subscribers.total | default: "0" }}</span>
+          <span class="label label--small">Subs</span>
+          {% if data.subscribers.recent and data.subscribers.recent[0] %}
+            <span class="label label--underline">{{ data.subscribers.recent[0].user_name }}</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endif %}
+      {% if  data.chatters.total > 0 %}
+      <div class="item">
+        <div class="meta"></div>
+        <div class="content text--center">
+          <span class="value value--xsmall value--tnums" data-value-fit="true" data-value-format="true">{{ data.chatters.total | default: "0" }}</span>
+          <span class="label label--small">Chatters</span>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+{% endif %}
+{% render "title_bar", trmnl:trmnl, data:data %}
