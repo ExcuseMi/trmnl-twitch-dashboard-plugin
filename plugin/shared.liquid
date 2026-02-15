@@ -99,7 +99,7 @@
               </div>
               {% endif %}
             {% endif %}
-            {% if show_description == "yes" and data.subscribers.total <= 0 %}
+            {% if show_description == "yes" %}
               <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
                 <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
                 <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
@@ -193,7 +193,7 @@
                 <span class="label label--small">subs</span>
               </div>
               {% endif %}
-              {% if show_description == "yes" and data.subscribers.total <= 0 %}
+              {% if show_description == "yes" %}
               <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
                 <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
                 <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
@@ -298,7 +298,7 @@
               </div>
               {% endif %}
             {% endif %}
-            {% if show_description == "yes" and data.subscribers.total <= 0 %}
+            {% if show_description == "yes" %}
               <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
                 <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
                 <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
@@ -380,7 +380,7 @@
               </div>
               {% endif %}
             {% endif %}
-            {% if show_description == "yes" and data.subscribers.total <= 0 %}
+            {% if show_description == "yes" %}
               <div class="bg--gray-60 p--1 rounded flex flex--col text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
                 <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
                 <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
