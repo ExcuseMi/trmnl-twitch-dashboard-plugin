@@ -2,6 +2,6 @@
 {% if user_id == 0 %}
   {% render "no_user", trmnl:trmnl, data:data %}
 {% else %}
-  {% render "dashboard", data:data, trmnl:trmnl, show_description:"no", show_thumbnail:"yes", show_tags:"no", show_duration:"yes", show_recent_names:"yes", show_stats:"yes", size:"medium" %}
+  {% render "dashboard", data:data, trmnl:trmnl, show_description:"yes", show_thumbnail:"yes", show_tags:"no", show_duration:"yes", show_recent_names:"yes", show_stats:"yes", size:"medium" %}
 {% endif %}
 {% render "title_bar", trmnl:trmnl, data:data %}

@@ -42,6 +42,11 @@ function transform(input) {
     data.channel = input.IDX_5.data[0];
   }
 
+  // IDX_6 = /goals
+  if (input.IDX_6 && input.IDX_6.data && input.IDX_6.data.length > 0) {
+    data.goal = input.IDX_6.data[0];
+  }
+
   // Enrich offline stream with channel data
   if (data.stream && data.stream.type === "offline" && data.channel) {
     if (data.channel.game_name) {
@@ -53,6 +58,20 @@ function transform(input) {
     if (data.channel.tags) {
       data.stream.tags = data.channel.tags;
     }
+  }
+
+  // Format large numbers as compact (e.g. 485656 → "486K")
+  function formatCompact(num) {
+    if (!num || num < 1000) return String(num || 0);
+    if (num < 1000000) return (Math.round(num / 100) / 10) + "K";
+    return (Math.round(num / 100000) / 10) + "M";
+  }
+
+  if (data.followers) {
+    data.followers.display = formatCompact(data.followers.total);
+  }
+  if (data.subscribers) {
+    data.subscribers.display = formatCompact(data.subscribers.total);
   }
 
   return {
