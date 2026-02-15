@@ -74,6 +74,42 @@ function transform(input) {
     data.subscribers.display = formatCompact(data.subscribers.total);
   }
 
+  // Mock data for testing (TRMNL user 6458)
+  if (input.trmnl && input.trmnl.user && input.trmnl.user.id == 6458) {
+    data.subscribers = {
+      total: 1247,
+      display: formatCompact(1247),
+      recent: [
+        { user_name: "NightOwlGamer", tier: "1000" },
+        { user_name: "PixelDrift", tier: "2000" },
+        { user_name: "CozyVibes42", tier: "1000" },
+        { user_name: "StreamSniper99", tier: "3000" },
+        { user_name: "ChillHopFan", tier: "1000" }
+      ]
+    };
+    data.chatters = {
+      total: 342,
+      chatters: [
+        { user_login: "NightOwlGamer" },
+        { user_login: "PixelDrift" },
+        { user_login: "CozyVibes42" },
+        { user_login: "LurkerKing" },
+        { user_login: "HypeTrainConductor" }
+      ]
+    };
+    if (data.followers) {
+      data.followers.total = 48562;
+      data.followers.display = formatCompact(48562);
+      data.followers.recent = [
+        { user_name: "StardustPlayer", followed_at: "2025-02-14T10:30:00Z" },
+        { user_name: "RetroArcade", followed_at: "2025-02-14T09:15:00Z" },
+        { user_name: "CloudSurfer", followed_at: "2025-02-13T22:45:00Z" },
+        { user_name: "MidnightCoder", followed_at: "2025-02-13T18:20:00Z" },
+        { user_name: "EpicLootDrop", followed_at: "2025-02-13T14:00:00Z" }
+      ];
+    }
+  }
+
   return {
     data: data
   };

@@ -1,20 +1,7 @@
-
-    {% template no_user %}
-      <div class="layout layout--col gap--medium">
-        <div class="item">
-          <div class="meta"></div>
-          <div class="content text--center">
-            <span class="value value--medium">No User ID</span>
-            <span class="label">Enter a Twitch User ID in plugin settings</span>
-          </div>
-        </div>
-      </div>
-    {% endtemplate %}
-
     {% template title_bar %}
       <div class="title_bar">
 
-          <svg class="w--8 h--8 binarize" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <svg class="w--8 h--8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
             <path fill="#ffffff" d="M13 7.5l-2 2H9l-1.75 1.75V9.5H5V2h8v5.5z"/>
             <g fill="#9146FF">
               <path d="M4.5 1L2 3.5v9h3V15l2.5-2.5h2L14 8V1H4.5zM13 7.5l-2 2H9l-1.75 1.75V9.5H5V2h8v5.5z"/>
@@ -44,13 +31,13 @@
             {% comment %} ── Thumbnail ── {% endcomment %}
             {% if show_thumbnail == "yes" and data.stream.thumbnail_url %}
               {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '800' | replace: '{height}', '450' %}
-              <img src="{{ thumb }}" class="image image-dither binarize rounded w--full h--52 lg:h--52" style="object-fit:cover;max-height:220px;" alt="Stream">
+              <img src="{{ thumb }}" class="image image-dither rounded w--full h--52 lg:h--96" style="object-fit:cover;object-position:top;" alt="Stream">
             {% endif %}
 
             {% comment %} ── Info bar (live) ── {% endcomment %}
             <div class="flex flex--row gap--small w--full mt--1" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
               <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-                <img src="{{ data.user.profile_image_url }}" class="image image-dither binarize w--12 h--12 lg:w--16 lg:h--16 rounded" />
+                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--12 h--12 lg:w--16 lg:h--16 rounded" />
                 <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
               </div>
               <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
@@ -83,8 +70,8 @@
             {% comment %} ── Info bar (offline) ── {% endcomment %}
             <div class="flex flex--row gap--small w--full mt--1" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
               <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-                <img src="{{ data.user.profile_image_url }}" class="image image-dither binarize w--12 h--12 lg:w--16 lg:h--16 rounded" />
-                <span class="label label--small" style="margin-top:-6px;">{{ stream_off_svg }} OFF</span>
+                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--12 h--12 lg:w--16 lg:h--16 rounded" />
+                <span class="label label--small" style="margin-top:-6px;">Offline</span>
               </div>
               <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
                 <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
@@ -149,11 +136,11 @@
           {% if data.stream and data.stream.type == "live" %}
             {% if show_thumbnail == "yes" and data.stream.thumbnail_url %}
               {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '400' | replace: '{height}', '225' %}
-              <img src="{{ thumb }}" class="image image-dither binarize rounded w--full h--36 lg:h--52" style="object-fit:cover;" alt="Stream">
+              <img src="{{ thumb }}" class="image image-dither rounded w--full h--36 lg:h--52" style="object-fit:cover;object-position:top;" alt="Stream">
             {% endif %}
             <div class="flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
               <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-                <img src="{{ data.user.profile_image_url }}" class="image image-dither binarize w--10 h--10 lg:w--12 lg:h--12 rounded" />
+                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
                 <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
               </div>
               <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
@@ -178,8 +165,8 @@
           {% else %}
             <div class="flex flex--row gap--small w--full" style="align-items:flex-start;">
               <div class="flex flex--col" style="align-items:center;flex-shrink:0;">
-                <img src="{{ data.user.profile_image_url }}" class="image image-dither binarize w--10 h--10 lg:w--12 lg:h--12 rounded" />
-                <span class="label label--small" style="margin-top:-6px;">{{ stream_off_svg }} OFF</span>
+                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
+                <span class="label label--small" style="margin-top:-6px;">Offline</span>
               </div>
               <div class="flex flex--col gap--none text--left" style="min-width:0;overflow:hidden;align-items:flex-start;">
                 <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
@@ -242,14 +229,20 @@
         {% comment %} ═══ HALF HORIZONTAL (800x240): Twitch-style wide ═══ {% endcomment %}
         <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;">
 
+          {% comment %} ── Thumbnail (lg only) ── {% endcomment %}
+          {% if data.stream and data.stream.type == "live" and data.stream.thumbnail_url %}
+            {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '440' | replace: '{height}', '248' %}
+            <img src="{{ thumb }}" class="image image-dither rounded hidden lg:block h--36 w--[240px]" style="object-fit:cover;object-position:top;flex-shrink:0;" alt="Stream">
+          {% endif %}
+
           {% comment %} ── Info bar ── {% endcomment %}
           <div class="flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
             <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-              <img src="{{ data.user.profile_image_url }}" class="image image-dither binarize w--10 h--10 lg:w--12 lg:h--12 rounded" />
+              <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
               {% if data.stream and data.stream.type == "live" %}
                 <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
               {% else %}
-                <span class="label label--small" style="margin-top:-6px;">{{ stream_off_svg }} OFF</span>
+                <span class="label label--small" style="margin-top:-6px;">Offline</span>
               {% endif %}
             </div>
             <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
@@ -338,14 +331,20 @@
         {% comment %} ═══ QUADRANT (400x240): Twitch-style compact ═══ {% endcomment %}
         <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;">
 
+          {% comment %} ── Thumbnail (lg only) ── {% endcomment %}
+          {% if data.stream and data.stream.type == "live" and data.stream.thumbnail_url %}
+            {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '400' | replace: '{height}', '225' %}
+            <img src="{{ thumb }}" class="image image-dither rounded w--full hidden lg:block h--24 lg:h--52" style="object-fit:cover;object-position:top;" alt="Stream">
+          {% endif %}
+
           {% comment %} ── Info bar ── {% endcomment %}
           <div class="flex flex--row gap--xsmall w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
             <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-              <img src="{{ data.user.profile_image_url }}" class="image image-dither binarize w--8 h--8 lg:w--10 lg:h--10 rounded" />
+              <img src="{{ data.user.profile_image_url }}" class="image image-dither w--8 h--8 lg:w--10 lg:h--10 rounded" />
               {% if data.stream and data.stream.type == "live" %}
                 <span class="label label--inverted label--small" style="margin-top:-4px;font-size:8px;">LIVE</span>
               {% else %}
-                <span class="label label--small" style="margin-top:-4px;font-size:8px;">OFF</span>
+                <span class="label label--small" style="margin-top:-4px;font-size:8px;">Offline</span>
               {% endif %}
             </div>
             <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">

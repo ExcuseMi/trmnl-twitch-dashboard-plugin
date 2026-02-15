@@ -1,7 +1,2 @@
-{% assign user_id = trmnl.plugin_settings.custom_fields_values.user_id | default: 0 | plus: 0 %}
-{% if user_id == 0 %}
-  {% render "no_user", trmnl:trmnl, data:data %}
-{% else %}
-  {% render "dashboard", data:data, trmnl:trmnl, show_description:"yes", show_thumbnail:"no", show_tags:"no", show_duration:"no", show_recent_names:"no", show_stats:"yes", size:"tiny" %}
-{% endif %}
+{% render "dashboard", data:data, trmnl:trmnl, show_description:"yes", show_thumbnail:"no", show_tags:"no", show_duration:"no", show_recent_names:"no", show_stats:"yes", size:"tiny" %}
 {% render "title_bar", trmnl:trmnl, data:data %}
