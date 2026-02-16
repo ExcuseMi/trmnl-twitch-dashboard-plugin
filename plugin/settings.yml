@@ -4,7 +4,12 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: " https://api.twitch.tv/helix/users?id={{user_id}}\r\n  https://api.twitch.tv/helix/streams?user_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}\r\n"
+polling_url: >-
+  https://api.twitch.tv/helix/users?id={{user_id}}
+  https://api.twitch.tv/helix/streams?user_id={{user_id}}
+  https://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}
+  https://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}
+  https://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}
 polling_headers: Authorization=Bearer {{oauth_access_token}}&Client-Id=v5iu0dpxojycn6aabbis0jr48hrjih
 polling_body: ''
 id: 243915

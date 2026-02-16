@@ -1,6 +1,5 @@
     {% template title_bar %}
       <div class="title_bar">
-
           <svg class="w--8 h--8" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none">
             <path fill="#ffffff" d="M13 7.5l-2 2H9l-1.75 1.75V9.5H5V2h8v5.5z"/>
             <g fill="#9146FF">
@@ -14,46 +13,35 @@
     {% endtemplate %}
 
     {% template dashboard %}
-
-      {% assign stream_on_svg = '<svg class="w--6 h--6 mr--1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><g><path d="M6.26,19.089A9.625,9.625,0,0,1,6.234,4.911C6.709,4.475,6,3.769,5.527,4.2A10.516,10.516,0,0,0,5.553,19.8c.475.433,1.184-.273.707-.707Z"/><path d="M8.84,15.706a5.024,5.024,0,0,1-.014-7.412c.474-.437-.234-1.143-.707-.707a6.028,6.028,0,0,0,.014,8.826c.474.434,1.183-.272.707-.707Z"/><circle cx="12" cy="12" r="1.244"/><path d="M17.74,4.911a9.625,9.625,0,0,1,.026,14.178c-.475.436.234,1.142.707.707A10.516,10.516,0,0,0,18.447,4.2c-.475-.433-1.184.273-.707.707Z"/><path d="M15.16,8.294a5.024,5.024,0,0,1,.014,7.412c-.474.437.234,1.143.707.707a6.028,6.028,0,0,0-.014-8.826c-.474-.434-1.183.272-.707.707Z"/></g></svg>' %}
-
-      {% assign stream_off_svg = '<svg class="w--6 h--6 mr--1" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000"><g><path d="M4.911,4.206c-.45-.45-1.16.26-.71.71l.32.32v.01A10.646,10.646,0,0,0,5.541,19.8c.48.43,1.19-.28.71-.71a9.623,9.623,0,0,1-1.01-13.13l2.27,2.27a6.022,6.022,0,0,0,.61,8.18c.48.44,1.19-.27.71-.7a5.024,5.024,0,0,1-.61-6.77l2.61,2.61a1.13,1.13,0,0,0-.09.45,1.248,1.248,0,0,0,1.25,1.24,1.13,1.13,0,0,0,.45-.09l4.77,4.77.86.86a3.024,3.024,0,0,1-.31.31.355.355,0,0,0-.11.16.406.406,0,0,0-.04.19.381.381,0,0,0,.04.19.386.386,0,0,0,.11.17.5.5,0,0,0,.35.14.585.585,0,0,0,.13-.02.432.432,0,0,0,.22-.12c.11-.1.22-.2.32-.3.1.09.19.19.29.29.45.45,1.16-.26.71-.71Z"/><path d="M17.73,4.908a9.624,9.624,0,0,1,2.3,11.1c-.265.582.6,1.09.864.505A10.647,10.647,0,0,0,18.438,4.2c-.475-.433-1.185.272-.708.707Z"/><path d="M15.15,8.291a5.016,5.016,0,0,1,1.6,4.572.515.515,0,0,0,.349.615.5.5,0,0,0,.615-.349,6.042,6.042,0,0,0-1.852-5.546c-.476-.431-1.185.274-.708.708Z"/></g></svg>' %}
-
-      {% assign game_icon_svg = '<svg class="w--6 h--6 m--1" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 8.5C8 7.948 7.552 7.5 7 7.5S6 7.948 6 8.5V9H5.5C4.948 9 4.5 9.448 4.5 10S4.948 11 5.5 11H6V11.5C6 12.052 6.448 12.5 7 12.5S8 12.052 8 11.5V11H8.5C9.052 11 9.5 10.552 9.5 10S9.052 9 8.5 9H8V8.5Z" fill="#000"/><path d="M18 8C18 8.552 17.552 9 17 9S16 8.552 16 8 16.448 7 17 7 18 7.448 18 8Z" fill="#000"/><path d="M17 13C17.552 13 18 12.552 18 12S17.552 11 17 11 16 11.448 16 12 16.448 13 17 13Z" fill="#000"/><path d="M16 10C16 10.552 15.552 11 15 11S14 10.552 14 10 14.448 9 15 9 16 9.448 16 10Z" fill="#000"/><path d="M19 11C19.552 11 20 10.552 20 10S19.552 9 19 9 18 9.448 18 10 18.448 11 19 11Z" fill="#000"/><path fill-rule="evenodd" clip-rule="evenodd" d="M12 3C10.188 3 7.962 3.258 6.218 3.509C3.943 3.837 2.091 5.517 1.61 7.788C1.341 9.059 1.077 10.562 1.016 11.82C.973 12.723.878 13.983.777 15.192.672 16.45 1.091 17.746 1.861 18.668 2.646 19.609 3.889 20.243 5.324 19.841 6.242 19.584 6.976 18.939 7.52 18.303 8.077 17.652 8.52 16.912 8.835 16.31 9.078 15.847 9.509 15.586 9.915 15.586H14.085C14.491 15.586 14.922 15.847 15.165 16.31 15.48 16.912 15.923 17.652 16.48 18.303 17.024 18.939 17.758 19.584 18.676 19.841 20.111 20.243 21.354 19.609 22.139 18.668 22.908 17.746 23.328 16.45 23.223 15.192 23.122 13.983 23.027 12.723 22.984 11.82 22.923 10.562 22.659 9.059 22.39 7.788 21.909 5.517 20.057 3.837 17.782 3.509 16.038 3.258 13.812 3 12 3ZM6.503 5.489C8.227 5.241 10.337 5 12 5S15.773 5.241 17.497 5.489C18.965 5.7 20.131 6.775 20.433 8.203 20.697 9.446 20.933 10.822 20.986 11.916 21.031 12.856 21.129 14.146 21.23 15.359 21.291 16.096 21.034 16.871 20.604 17.387 20.189 17.884 19.709 18.053 19.215 17.915 18.85 17.813 18.433 17.509 17.999 17.002 17.577 16.509 17.214 15.913 16.936 15.382 16.404 14.367 15.348 13.586 14.085 13.586H9.915C8.652 13.586 7.596 14.367 7.064 15.382 6.786 15.913 6.423 16.509 6.001 17.002 5.567 17.509 5.15 17.813 4.785 17.915 4.291 18.053 3.811 17.884 3.396 17.387 2.966 16.871 2.709 16.096 2.77 15.359 2.871 14.146 2.969 12.856 3.014 11.916 3.067 10.822 3.303 9.446 3.567 8.203 3.869 6.775 5.035 5.7 6.503 5.489Z" fill="#000"/></svg>' %}
-
       <div class="layout layout--stretch p--1" style="overflow:hidden;box-sizing:border-box;">
 
       {% if size == "full" %}
-        {% comment %} ═══ FULL (800x480): Twitch-style ═══ {% endcomment %}
         <div class="flex flex--col gap--none" style="height:100%;overflow:hidden;box-sizing:border-box;">
 
           {% if data.stream and data.stream.type == "live" %}
-            {% comment %} ── Thumbnail ── {% endcomment %}
             {% if show_thumbnail == "yes" and data.stream.thumbnail_url %}
               {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '800' | replace: '{height}', '450' %}
               <img src="{{ thumb }}" class="image image-dither rounded w--full h--52 lg:h--96" style="object-fit:cover;object-position:top;" alt="Stream">
             {% endif %}
-
-            {% comment %} ── Info bar (live) ── {% endcomment %}
-            <div class="flex flex--row gap--small w--full mt--1" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
+            <div class="bg--black p--2 rounded mt--1 flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
               <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
                 <img src="{{ data.user.profile_image_url }}" class="image image-dither w--12 h--12 lg:w--16 lg:h--16 rounded" />
                 <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
               </div>
               <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
-                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
-                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: "No title" }}</span>
+                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;">{{ data.user.display_name | default: "Unknown" }}</span>
+                <span class="label label--small" data-clamp="2" style="color:#fff;">{{ data.stream.title | default: "No title" }}</span>
                 <div class="flex flex--row gap--xsmall" style="flex-wrap:wrap;align-items:center;">
-                  <span class="label label--small">{{ data.stream.game_name | default: "Unknown" }}</span>
+                  <span class="label label--small" style="color:#fff;">{{ data.stream.game_name | default: "Unknown" }}</span>
                   {% if show_tags == "yes" and data.stream.tags and data.stream.tags.size > 0 %}
                     {% for tag in data.stream.tags limit:3 %}
-                      <span class="label label--outline label--small">{{ tag }}</span>
+                      <span class="label label--outline label--small" style="color:#fff;">{{ tag }}</span>
                     {% endfor %}
                   {% endif %}
                 </div>
               </div>
               <div class="flex flex--col gap--none" style="flex-shrink:0;align-items:flex-end;white-space:nowrap;">
-                <span class="value value--small lg:value--large value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.stream.viewer_count | default: "0" }}</span>
+                <span class="value value--small lg:value--large value--tnums" data-value-format="true" data-value-locale="en-US" style="color:#fff;">{{ data.stream.viewer_count | default: "0" }}</span>
                 {% if show_duration == "yes" %}
                   {% assign started_at = data.stream.started_at | date: "%s" %}
                   {% assign now = "now" | date: "%s" %}
@@ -61,160 +49,40 @@
                   {% assign hours = duration_seconds | divided_by: 3600 %}
                   {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
                   {% assign seconds = duration_seconds | modulo: 60 %}
-                  <span class="label label--small">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}:{% if seconds < 10 %}0{% endif %}{{ seconds }}</span>
+                  <span class="label label--small" style="color:#fff;">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}:{% if seconds < 10 %}0{% endif %}{{ seconds }}</span>
                 {% endif %}
               </div>
             </div>
-
           {% else %}
-            {% comment %} ── Info bar (offline) ── {% endcomment %}
-            <div class="flex flex--row gap--small w--full mt--1" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
+            <div class="bg--black p--2 rounded mt--1 flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
               <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
                 <img src="{{ data.user.profile_image_url }}" class="image image-dither w--12 h--12 lg:w--16 lg:h--16 rounded" />
-                <span class="label label--small" style="margin-top:-6px;">Offline</span>
               </div>
               <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
-                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
-                <span class="label label--small">Currently offline</span>
-                {% if data.stream.game_name %}
-                  <span class="label label--small mt--1">Last stream:</span>
-                  <span class="label label--small" data-clamp="2">{{ data.stream.title | default: data.stream.game_name }}</span>
-                  <span class="label label--small">{{ data.stream.game_name }}</span>
-                {% endif %}
+                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;">{{ data.user.display_name | default: "Unknown" }}</span>
+                <span class="label label--small" style="color:#fff;">Currently offline</span>
               </div>
             </div>
           {% endif %}
 
-          {% comment %} ── Bottom row: Stats + About/Goal ── {% endcomment %}
-          <div class="flex flex--row gap--xsmall self--stretch" style="align-items:stretch;margin-top:auto;">
-            {% if show_stats == "yes" %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--center" style="flex-shrink:0;justify-content:center;align-items:center;min-width:80px;">
-                <span class="value value--small lg:value--large value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.followers.total | default: 0 }}</span>
-                <span class="label label--small">followers</span>
-              </div>
-              {% if data.subscribers.total > 0 %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--center" style="flex-shrink:0;justify-content:center;align-items:center;min-width:80px;">
-                <span class="value value--small lg:value--large value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.subscribers.total | default: 0 }}</span>
-                <span class="label label--small">subscribers</span>
-              </div>
-              {% endif %}
-            {% endif %}
-            {% if show_description == "yes" %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
-                <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
-                <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
-                  <span class="description text--left" data-clamp="2">{{ data.user.description | default: "No description" }}</span>
-                </div>
-              </div>
-            {% endif %}
-            {% if data.goal %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
-                <span class="label label--small">Active Goal</span>
-                <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
-                  <span class="description text--left">{{ data.goal.description | default: data.goal.type | default: "Goal" }}</span>
-                  {% assign goal_pct = data.goal.current_amount | times: 100 | divided_by: data.goal.target_amount %}
-                  {% if goal_pct > 100 %}{% assign goal_pct = 100 %}{% endif %}
-                  <div class="progress-bar progress-bar--small mt--1">
-                    <div class="track">
-                      <div class="fill" style="width:{{ goal_pct }}%;"></div>
-                    </div>
-                  </div>
-                  <div class="flex mt--1" style="justify-content:flex-end;">
-                    <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
-          </div>
-
-        </div>
-
-      {% elsif size == "medium" %}
-        {% comment %} ═══ HALF VERTICAL (400x480): Twitch-style stacked ═══ {% endcomment %}
-        <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;">
-
-          {% if data.stream and data.stream.type == "live" %}
-            {% if show_thumbnail == "yes" and data.stream.thumbnail_url %}
-              {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '400' | replace: '{height}', '225' %}
-              <img src="{{ thumb }}" class="image image-dither rounded w--full h--36 lg:h--52" style="object-fit:cover;object-position:top;" alt="Stream">
-            {% endif %}
-            <div class="flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
-              <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
-                <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
-              </div>
-              <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
-                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
-                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: "No title" }}</span>
-                <div class="flex flex--row gap--xsmall" style="flex-wrap:wrap;align-items:center;">
-                  <span class="label label--small">{{ data.stream.game_name | default: "Unknown" }}</span>
-                  {% if show_duration == "yes" %}
-                    {% assign started_at = data.stream.started_at | date: "%s" %}
-                    {% assign now = "now" | date: "%s" %}
-                    {% assign duration_seconds = now | minus: started_at %}
-                    {% assign hours = duration_seconds | divided_by: 3600 %}
-                    {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
-                    <span class="label label--outline label--small">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
-                  {% endif %}
-                </div>
-              </div>
-              <div class="flex flex--col gap--none" style="flex-shrink:0;align-items:flex-end;white-space:nowrap;">
-                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.stream.viewer_count | default: "0" }}</span>
-              </div>
-            </div>
-          {% else %}
-            <div class="flex flex--row gap--small w--full" style="align-items:flex-start;">
-              <div class="flex flex--col" style="align-items:center;flex-shrink:0;">
-                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
-                <span class="label label--small" style="margin-top:-6px;">Offline</span>
-              </div>
-              <div class="flex flex--col gap--none text--left" style="min-width:0;overflow:hidden;align-items:flex-start;">
-                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
-                <span class="label label--small">Currently offline</span>
-                {% if data.stream.game_name %}
-                  <span class="label label--small mt--1">Last stream:</span>
-                  <span class="label label--small" data-clamp="2">{{ data.stream.title | default: data.stream.game_name }}</span>
-                  <span class="label label--small">{{ data.stream.game_name }}</span>
-                {% endif %}
+          {% if data.stream.type != "live" and data.stream.game_name %}
+            <div class="bg--gray-60 p--2 rounded mt--1 flex flex--col text--left w--full" style="align-items:flex-start;">
+              <span class="title title--small">Last Stream</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: data.stream.game_name }}</span>
+                <span class="label label--small">{{ data.stream.game_name }}</span>
               </div>
             </div>
           {% endif %}
 
-          {% comment %} ── Stats + About ── {% endcomment %}
-          {% if show_stats == "yes" %}
-            <div class="flex flex--row gap--xsmall w--full" style="box-sizing:border-box;margin-top:auto;align-items:stretch;">
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--center" style="justify-content:center;align-items:center;min-width:70px;">
-                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.followers.total | default: 0 }}</span>
-                <span class="label label--small">followers</span>
-              </div>
-              {% if data.subscribers.total > 0 %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--center" style="justify-content:center;align-items:center;min-width:70px;">
-                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.subscribers.total | default: 0 }}</span>
-                <span class="label label--small">subs</span>
-              </div>
-              {% endif %}
-              {% if show_description == "yes" %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
-                <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
-                <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
-                  <span class="description text--left" data-clamp="2">{{ data.user.description | default: "No description" }}</span>
-                </div>
-              </div>
-              {% endif %}
-            </div>
-          {% endif %}
-
-          {% comment %} ── Goal ── {% endcomment %}
           {% if data.goal %}
-            <div class="bg--gray-60 p--2 rounded flex flex--col text--left w--full" style="box-sizing:border-box;align-items:flex-start;">
-              <span class="label label--small">Active Goal</span>
-              <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
+            <div class="bg--gray-60 p--2 rounded mt--1 text--left w--full hidden lg:flex lg:flex--col" style="align-items:flex-start;">
+              <span class="title title--small">{{ data.goal.description | default: data.goal.type | default: "Goal" }}</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
                 {% assign goal_pct = data.goal.current_amount | times: 100 | divided_by: data.goal.target_amount %}
                 {% if goal_pct > 100 %}{% assign goal_pct = 100 %}{% endif %}
                 <div class="progress-bar progress-bar--small mt--1">
-                  <div class="track">
-                    <div class="fill" style="width:{{ goal_pct }}%;"></div>
-                  </div>
+                  <div class="track"><div class="fill" style="width:{{ goal_pct }}%;"></div></div>
                 </div>
                 <div class="flex mt--1" style="justify-content:flex-end;">
                   <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
@@ -223,173 +91,333 @@
             </div>
           {% endif %}
 
+          <div class="flex flex--row gap--xsmall self--stretch w--full" style="align-items:stretch;margin-top:auto;">
+            {% if show_stats == "yes" %}
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Followers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value sm:portrait:value--small md:portrait:value--small value--large lg:value--xlarge value--tnums">{{ data.followers.display | default: "0" }}</span>
+                </div>
+              </div>
+              {% if data.subscribers.total > 0 %}
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Subscribers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value sm:portrait:value--small md:portrait:value--small value--large lg:value--xlarge value--tnums">{{ data.subscribers.display | default: "0" }}</span>
+                </div>
+              </div>
+              {% endif %}
+            {% endif %}
+            {% if show_description == "yes" %}
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:stretch;">
+                <span class="title title--small">About</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;flex:1;">
+                  <span class="description text--left" data-clamp="2">{{ data.user.description | default: "No description" }}</span>
+                </div>
+              </div>
+            {% endif %}
+          </div>
         </div>
 
-      {% elsif size == "small" %}
-        {% comment %} ═══ HALF HORIZONTAL (800x240): Twitch-style wide ═══ {% endcomment %}
-        <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;">
+      {% elsif size == "medium" %}
+        <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;align-items:flex-start;">
 
-          {% comment %} ── Thumbnail (lg only) ── {% endcomment %}
-          {% if data.stream and data.stream.type == "live" and data.stream.thumbnail_url %}
-            {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '440' | replace: '{height}', '248' %}
-            <img src="{{ thumb }}" class="image image-dither rounded hidden lg:block h--36 w--[240px]" style="object-fit:cover;object-position:top;flex-shrink:0;" alt="Stream">
-          {% endif %}
-
-          {% comment %} ── Info bar ── {% endcomment %}
-          <div class="flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
-            <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
-              <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
-              {% if data.stream and data.stream.type == "live" %}
+          {% if data.stream and data.stream.type == "live" %}
+            {% if show_thumbnail == "yes" and data.stream.thumbnail_url %}
+              {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '400' | replace: '{height}', '225' %}
+              <img src="{{ thumb }}" class="image image-dither rounded w--full h--36 lg:h--52" style="object-fit:cover;object-position:top;" alt="Stream">
+            {% endif %}
+            <div class="bg--black p--2 rounded flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
+              <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
+                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
                 <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
-              {% else %}
-                <span class="label label--small" style="margin-top:-6px;">Offline</span>
-              {% endif %}
-            </div>
-            <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
-              <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
-              {% if data.stream and data.stream.type == "live" %}
-                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: "No title" }}</span>
+              </div>
+              <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
+                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;">{{ data.user.display_name | default: "Unknown" }}</span>
+                <span class="label label--small" data-clamp="2" style="color:#fff;">{{ data.stream.title | default: "No title" }}</span>
                 <div class="flex flex--row gap--xsmall" style="flex-wrap:wrap;align-items:center;">
-                  <span class="label label--small">{{ data.stream.game_name | default: "Unknown" }}</span>
+                  <span class="label label--small" style="color:#fff;">{{ data.stream.game_name | default: "Unknown" }}</span>
                   {% if show_duration == "yes" %}
                     {% assign started_at = data.stream.started_at | date: "%s" %}
                     {% assign now = "now" | date: "%s" %}
                     {% assign duration_seconds = now | minus: started_at %}
                     {% assign hours = duration_seconds | divided_by: 3600 %}
                     {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
-                    <span class="label label--outline label--small">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
+                    <span class="label label--outline label--small" style="color:#fff;">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
                   {% endif %}
                 </div>
-              {% elsif data.stream.game_name %}
-                <span class="label label--small">Last stream:</span>
-                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: data.stream.game_name }}</span>
-                <span class="label label--small">{{ data.stream.game_name }}</span>
-              {% else %}
-                <span class="label label--small">Currently offline</span>
-              {% endif %}
-            </div>
-            {% if data.stream and data.stream.type == "live" %}
+              </div>
               <div class="flex flex--col gap--none" style="flex-shrink:0;align-items:flex-end;white-space:nowrap;">
-                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.stream.viewer_count | default: "0" }}</span>
+                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US" style="color:#fff;">{{ data.stream.viewer_count | default: "0" }}</span>
                 {% if show_duration == "yes" %}
                   {% assign started_at = data.stream.started_at | date: "%s" %}
                   {% assign now = "now" | date: "%s" %}
                   {% assign duration_seconds = now | minus: started_at %}
                   {% assign hours = duration_seconds | divided_by: 3600 %}
                   {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
-                  {% assign seconds = duration_seconds | modulo: 60 %}
-                  <span class="label label--small">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}:{% if seconds < 10 %}0{% endif %}{{ seconds }}</span>
+                  <span class="label label--small" style="color:#fff;">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
+                {% endif %}
+              </div>
+            </div>
+          {% else %}
+            <div class="bg--black p--2 rounded flex flex--row gap--small w--full" style="align-items:flex-start;">
+              <div class="flex flex--col" style="align-items:center;flex-shrink:0;">
+                <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
+              </div>
+              <div class="flex flex--col gap--none text--left" style="min-width:0;overflow:hidden;align-items:flex-start;">
+                <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;">{{ data.user.display_name | default: "Unknown" }}</span>
+                <span class="label label--small" style="color:#fff;">Currently offline</span>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if data.stream.type != "live" and data.stream.game_name %}
+            <div class="bg--gray-60 p--2 rounded flex flex--col text--left w--full" style="align-items:flex-start;">
+              <span class="title title--small">Last Stream</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: data.stream.game_name }}</span>
+                <span class="label label--small">{{ data.stream.game_name }}</span>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if data.goal %}
+            <div class="bg--gray-60 p--2 rounded text--left w--full hidden lg:flex lg:flex--col" style="align-items:flex-start;">
+              <span class="title title--small">{{ data.goal.description | default: data.goal.type | default: "Goal" }}</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                {% assign goal_pct = data.goal.current_amount | times: 100 | divided_by: data.goal.target_amount %}
+                {% if goal_pct > 100 %}{% assign goal_pct = 100 %}{% endif %}
+                <div class="progress-bar progress-bar--small mt--1">
+                  <div class="track"><div class="fill" style="width:{{ goal_pct }}%;"></div></div>
+                </div>
+                <div class="flex mt--1" style="justify-content:flex-end;">
+                  <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if show_stats == "yes" %}
+            <div class="flex flex--row gap--xsmall w--full" style="box-sizing:border-box;margin-top:auto;align-items:stretch;">
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Followers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value value--large value--tnums">{{ data.followers.display | default: "0" }}</span>
+                </div>
+              </div>
+              {% if data.subscribers.total > 0 %}
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left sm:portrait:hidden md:portrait:hidden" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Subscribers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value value--large value--tnums">{{ data.subscribers.display | default: "0" }}</span>
+                </div>
+              </div>
+              {% endif %}
+              {% if show_description == "yes" %}
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left hidden lg:flex lg:portrait:hidden" style="flex:1;align-items:stretch;">
+                <span class="title title--small">About</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;flex:1;">
+                  <span class="description text--left" data-clamp="2">{{ data.user.description | default: "No description" }}</span>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+      {% elsif size == "small" %}
+        <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;">
+
+          {% if data.stream and data.stream.type == "live" and data.stream.thumbnail_url %}
+            {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '440' | replace: '{height}', '248' %}
+            <img src="{{ thumb }}" class="image image-dither rounded hidden md:portrait:block lg:block h--36 w--[240px] lg:w--full" style="object-fit:cover;object-position:top;flex-shrink:0;align-self:center;" alt="Stream">
+          {% endif %}
+
+          <div class="bg--black p--2 rounded flex flex--row gap--small w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
+            <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
+              <img src="{{ data.user.profile_image_url }}" class="image image-dither w--10 h--10 lg:w--12 lg:h--12 rounded" />
+              {% if data.stream and data.stream.type == "live" %}
+                <span class="label label--inverted label--small" style="margin-top:-6px;">LIVE</span>
+              {% endif %}
+            </div>
+            <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
+              <span class="title title--small lg:title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;">{{ data.user.display_name | default: "Unknown" }}</span>
+              {% if data.stream and data.stream.type == "live" %}
+                <span class="label label--small" data-clamp="2" style="color:#fff;">{{ data.stream.title | default: "No title" }}</span>
+                <div class="flex flex--row gap--xsmall" style="flex-wrap:wrap;align-items:center;">
+                  <span class="label label--small" style="color:#fff;">{{ data.stream.game_name | default: "Unknown" }}</span>
+                  {% if show_duration == "yes" %}
+                    {% assign started_at = data.stream.started_at | date: "%s" %}
+                    {% assign now = "now" | date: "%s" %}
+                    {% assign duration_seconds = now | minus: started_at %}
+                    {% assign hours = duration_seconds | divided_by: 3600 %}
+                    {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
+                    <span class="label label--outline label--small" style="color:#fff;">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
+                  {% endif %}
+                </div>
+              {% else %}
+                <span class="label label--small" style="color:#fff;">Currently offline</span>
+              {% endif %}
+            </div>
+            {% if data.stream and data.stream.type == "live" %}
+              <div class="flex flex--col gap--none" style="flex-shrink:0;align-items:flex-end;white-space:nowrap;">
+                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US" style="color:#fff;">{{ data.stream.viewer_count | default: "0" }}</span>
+                {% if show_duration == "yes" %}
+                  {% assign started_at = data.stream.started_at | date: "%s" %}
+                  {% assign now = "now" | date: "%s" %}
+                  {% assign duration_seconds = now | minus: started_at %}
+                  {% assign hours = duration_seconds | divided_by: 3600 %}
+                  {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
+                  <span class="label label--small" style="color:#fff;">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
                 {% endif %}
               </div>
             {% endif %}
           </div>
 
-          {% comment %} ── Bottom: Stats + About + Goal ── {% endcomment %}
-          <div class="flex flex--row gap--xsmall self--stretch" style="align-items:stretch;margin-top:auto;">
+          {% if data.stream.type != "live" and data.stream.game_name %}
+            <div class="bg--gray-60 p--2 rounded flex flex--col text--left w--full" style="align-items:flex-start;">
+              <span class="title title--small">Last Stream</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: data.stream.game_name }}</span>
+                <span class="label label--small">{{ data.stream.game_name }}</span>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if data.goal %}
+            <div class="bg--gray-60 p--2 rounded text--left w--full hidden lg:portrait:flex lg:portrait:flex--col" style="align-items:flex-start;">
+              <span class="title title--small">{{ data.goal.description | default: data.goal.type | default: "Goal" }}</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                {% assign goal_pct = data.goal.current_amount | times: 100 | divided_by: data.goal.target_amount %}
+                {% if goal_pct > 100 %}{% assign goal_pct = 100 %}{% endif %}
+                <div class="progress-bar progress-bar--small mt--1">
+                  <div class="track"><div class="fill" style="width:{{ goal_pct }}%;"></div></div>
+                </div>
+                <div class="flex mt--1" style="justify-content:flex-end;">
+                  <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="flex flex--row gap--xsmall self--stretch w--full" style="align-items:stretch;margin-top:auto;">
             {% if show_stats == "yes" %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--center" style="justify-content:center;align-items:center;min-width:70px;">
-                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.followers.total | default: 0 }}</span>
-                <span class="label label--small">followers</span>
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Followers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value sm:portrait:value--xsmall md:portrait:value--xsmall value--xsmall lg:value--small value--tnums">{{ data.followers.display | default: "0" }}</span>
+                </div>
               </div>
               {% if data.subscribers.total > 0 %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--center" style="justify-content:center;align-items:center;min-width:70px;">
-                <span class="value value--small value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.subscribers.total | default: 0 }}</span>
-                <span class="label label--small">subs</span>
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Subscribers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value sm:portrait:value--xsmall md:portrait:value--xsmall value--xsmall lg:value--small value--tnums">{{ data.subscribers.display | default: "0" }}</span>
+                </div>
               </div>
               {% endif %}
             {% endif %}
             {% if show_description == "yes" %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
-                <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
-                <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
+              <div class="bg--gray-60 p--2 rounded flex flex--col text--left sm:portrait:hidden md:portrait:hidden" style="flex:1;align-items:stretch;">
+                <span class="title title--small">About</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;flex:1;">
                   <span class="description text--left" data-clamp="3">{{ data.user.description | default: "No description" }}</span>
                 </div>
               </div>
             {% endif %}
-            {% if data.goal %}
-              <div class="bg--gray-60 p--2 rounded flex flex--col text--left" style="flex:1;align-items:flex-start;">
-                <span class="label label--small">Active Goal</span>
-                <div class="bg--white p--2 rounded w--full" style="box-sizing:border-box;">
-                  {% assign goal_pct = data.goal.current_amount | times: 100 | divided_by: data.goal.target_amount %}
-                  {% if goal_pct > 100 %}{% assign goal_pct = 100 %}{% endif %}
-                  <div class="progress-bar progress-bar--small mt--1">
-                    <div class="track">
-                      <div class="fill" style="width:{{ goal_pct }}%;"></div>
-                    </div>
-                  </div>
-                  <div class="flex mt--1" style="justify-content:flex-end;">
-                    <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
-                  </div>
-                </div>
-              </div>
-            {% endif %}
           </div>
-
         </div>
 
       {% else %}
-        {% comment %} ═══ QUADRANT (400x240): Twitch-style compact ═══ {% endcomment %}
         <div class="flex flex--col gap--xsmall" style="height:100%;overflow:hidden;box-sizing:border-box;">
 
-          {% comment %} ── Thumbnail (lg only) ── {% endcomment %}
           {% if data.stream and data.stream.type == "live" and data.stream.thumbnail_url %}
             {% assign thumb = data.stream.thumbnail_url | replace: '{width}', '400' | replace: '{height}', '225' %}
             <img src="{{ thumb }}" class="image image-dither rounded w--full hidden lg:block h--24 lg:h--52" style="object-fit:cover;object-position:top;" alt="Stream">
           {% endif %}
 
-          {% comment %} ── Info bar ── {% endcomment %}
-          <div class="flex flex--row gap--xsmall w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
+          <div class="bg--black p--1 rounded flex flex--row gap--xsmall w--full" style="align-items:flex-start;overflow:hidden;box-sizing:border-box;">
             <div class="flex flex--col" style="flex-shrink:0;align-items:center;">
               <img src="{{ data.user.profile_image_url }}" class="image image-dither w--8 h--8 lg:w--10 lg:h--10 rounded" />
               {% if data.stream and data.stream.type == "live" %}
                 <span class="label label--inverted label--small" style="margin-top:-4px;font-size:8px;">LIVE</span>
-              {% else %}
-                <span class="label label--small" style="margin-top:-4px;font-size:8px;">Offline</span>
               {% endif %}
             </div>
             <div class="flex flex--col gap--none text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
-              <span class="title title--small" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.user.display_name | default: "Unknown" }}</span>
+              <span class="title title--small" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#fff;">{{ data.user.display_name | default: "Unknown" }}</span>
               {% if data.stream and data.stream.type == "live" %}
-                <span class="label label--small" data-clamp="2">{{ data.stream.title | default: "No title" }}</span>
-                <span class="label label--small">{{ data.stream.game_name | default: "Unknown" }}</span>
-              {% elsif data.stream.game_name %}
-                <span class="label label--small">Last stream:</span>
-                <span class="label label--small" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.stream.game_name }}</span>
+                <span class="label label--small" data-clamp="2" style="color:#fff;">{{ data.stream.title | default: "No title" }}</span>
+                <span class="label label--small" style="color:#fff;">{{ data.stream.game_name | default: "Unknown" }}</span>
               {% else %}
-                <span class="label label--small">Currently offline</span>
+                <span class="label label--small" style="color:#fff;">Currently offline</span>
               {% endif %}
             </div>
             {% if data.stream and data.stream.type == "live" %}
               <div class="flex flex--col" style="flex-shrink:0;align-items:flex-end;">
-                <span class="value value--xsmall value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.stream.viewer_count | default: "0" }}</span>
+                <span class="value value--xsmall value--tnums" data-value-format="true" data-value-locale="en-US" style="color:#fff;">{{ data.stream.viewer_count | default: "0" }}</span>
+                {% if show_duration == "yes" %}
+                  {% assign started_at = data.stream.started_at | date: "%s" %}
+                  {% assign now = "now" | date: "%s" %}
+                  {% assign duration_seconds = now | minus: started_at %}
+                  {% assign hours = duration_seconds | divided_by: 3600 %}
+                  {% assign minutes = duration_seconds | modulo: 3600 | divided_by: 60 %}
+                  <span class="label label--small" style="color:#fff;">{% if hours < 10 %}0{% endif %}{{ hours }}:{% if minutes < 10 %}0{% endif %}{{ minutes }}</span>
+                {% endif %}
               </div>
             {% endif %}
           </div>
 
-          {% comment %} ── Stats + About ── {% endcomment %}
-          <div class="flex flex--row gap--xsmall w--full mb--0" style="box-sizing:border-box;margin-top:auto;align-items:stretch;">
+          {% if data.stream.type != "live" and data.stream.game_name %}
+            <div class="bg--gray-60 p--1 rounded flex flex--col text--left w--full" style="align-items:flex-start;">
+              <span class="title title--small">Last Stream</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                <span class="label label--small" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{ data.stream.game_name }}</span>
+              </div>
+            </div>
+          {% endif %}
+
+          {% if data.goal %}
+            <div class="bg--gray-60 p--1 rounded text--left w--full hidden md:portrait:flex md:portrait:flex--col" style="align-items:flex-start;">
+              <span class="title title--small">{{ data.goal.description | default: data.goal.type | default: "Goal" }}</span>
+              <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                {% assign goal_pct = data.goal.current_amount | times: 100 | divided_by: data.goal.target_amount %}
+                {% if goal_pct > 100 %}{% assign goal_pct = 100 %}{% endif %}
+                <div class="progress-bar progress-bar--small mt--1">
+                  <div class="track"><div class="fill" style="width:{{ goal_pct }}%;"></div></div>
+                </div>
+                <div class="flex mt--1" style="justify-content:flex-end;">
+                  <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="flex flex--row gap--xsmall w--full" style="box-sizing:border-box;margin-top:auto;align-items:stretch;">
             {% if show_stats == "yes" %}
-              <div class="bg--gray-60 p--1 rounded flex flex--col text--center" style="justify-content:center;align-items:center;flex-shrink:0;min-width:60px;">
-                <span class="value value--xsmall value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.followers.total | default: 0 }}</span>
-                <span class="label label--small">followers</span>
+              <div class="bg--gray-60 p--1 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Followers</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value value--xsmall lg:value--small value--tnums">{{ data.followers.display | default: "0" }}</span>
+                </div>
               </div>
               {% if data.subscribers.total > 0 %}
-              <div class="bg--gray-60 p--1 rounded flex flex--col text--center" style="justify-content:center;align-items:center;flex-shrink:0;min-width:60px;">
-                <span class="value value--xsmall value--tnums" data-value-format="true" data-value-locale="en-US">{{ data.subscribers.total | default: 0 }}</span>
-                <span class="label label--small">subs</span>
+              <div class="bg--gray-60 p--1 rounded flex flex--col text--left" style="flex-shrink:0;align-items:flex-start;">
+                <span class="title title--small">Subs</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+                  <span class="value value--xsmall lg:value--small value--tnums">{{ data.subscribers.display | default: "0" }}</span>
+                </div>
               </div>
               {% endif %}
             {% endif %}
             {% if show_description == "yes" %}
-              <div class="bg--gray-60 p--1 rounded flex flex--col text--left" style="flex:1;min-width:0;overflow:hidden;align-items:flex-start;">
-                <span class="title title--small">About {{ data.user.display_name | default: "Unknown" }}</span>
-                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
+              <div class="bg--gray-60 p--1 rounded flex flex--col text--left sm:portrait:hidden md:portrait:hidden" style="flex:1;min-width:0;overflow:hidden;align-items:stretch;">
+                <span class="title title--small">About</span>
+                <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;flex:1;">
                   <span class="label label--small text--left" data-clamp="2">{{ data.user.description | default: "No description" }}</span>
                 </div>
               </div>
             {% endif %}
           </div>
-
         </div>
 
       {% endif %}
