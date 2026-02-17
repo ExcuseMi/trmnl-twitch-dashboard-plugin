@@ -59,7 +59,7 @@
               <svg class="w--4 h--4" viewBox="0 0 24 24" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" d="M6 8a6 6 0 1 1 7.025 5.913l.012.036A3 3 0 0 0 15.883 16H17a4 4 0 0 1 4 4v2h-2v-2a2 2 0 0 0-2-2h-1.117A5 5 0 0 1 12 16.15 5 5 0 0 1 8.117 18H7a2 2 0 0 0-2 2v2H3v-2a4 4 0 0 1 4-4h1.117a3 3 0 0 0 2.846-2.051l.012-.036A6.002 6.002 0 0 1 6 8Zm6 4a4 4 0 1 1 0-8 4 4 0 0 1 0 8Z" clip-rule="evenodd"/>
               </svg>
-              <span class="value {% if size == "small" %}value--xsmall sm:portrait:value--xsmall md:portrait:value--xsmall{% else %}value--small{% endif %} value--tnums text--white" data-value-format="true">{{ data.stream.viewer_count | default: "0" }}</span>
+              <span class="value {% if size == "small" %}value--xsmall sm:portrait:value--xsmall md:portrait:value--xsmall{% else %}value--small{% endif %} value--tnums text--white">{{ data.stream.viewer_display | default: "0" }}</span>
             </div>
               {% assign started_at = data.stream.started_at | date: "%s" %}
               {% assign now = "now" | date: "%s" %}
@@ -112,7 +112,7 @@
               <div class="track"><div class="fill" style="width:{{ goal_pct }}%;"></div></div>
             </div>
             <div class="flex mt--1" style="justify-content:flex-end;">
-              <span class="label label--small">{{ data.goal.current_amount }} / {{ data.goal.target_amount }}</span>
+              <span class="label label--small">{{ data.goal.current_display }} / {{ data.goal.target_display }}</span>
             </div>
           </div>
         </div>

@@ -16,6 +16,9 @@ function transform(input) {
 
   // IDX_1 = /streams
   data.stream = first(input.IDX_1) || { type: "offline" };
+  if (data.stream.viewer_count != null) {
+    data.stream.viewer_display = formatCompact(data.stream.viewer_count);
+  }
 
   // IDX_2 = /channels/followers
   if (input.IDX_2) {
@@ -50,7 +53,9 @@ function transform(input) {
       type: "follower",
       description: "Road to 50K followers",
       current_amount: 48562,
-      target_amount: 50000
+      current_display: formatCompact(48562),
+      target_amount: 50000,
+      target_display: formatCompact(50000)
     };
   }
 
