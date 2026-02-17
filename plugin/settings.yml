@@ -12,8 +12,8 @@ custom_fields:
 - keyname: about_plugin
   name: About This Plugin
   field_type: author_bio
-  description: Twitch Dashboard for TRMNL — monitor your stream status, viewers, followers, subscribers, and chatters at a glance.
-  category: entertainment,life
+  description: Twitch Dashboard for TRMNL — monitor your stream status, viewers, followers and subscribers at a glance.<br /><strong>Requires OAuth2 authentication!</strong>
+  category: entertainment
   github_url: https://github.com/ExcuseMi/trmnl-twitch-dashboard-plugin
 - keyname: user_id
   field_type: number
