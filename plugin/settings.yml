@@ -12,13 +12,13 @@ custom_fields:
 - keyname: about_plugin
   name: About This Plugin
   field_type: author_bio
-  description: Twitch Dashboard for TRMNL — monitor your stream status, viewers, followers and subscribers at a glance.<br /><strong>Requires OAuth2 authentication!</strong>
+  description: Twitch Dashboard for TRMNL — monitor your stream status, viewers, followers and subscribers at a glance.<br /><strong>Requires OAuth authentication!</strong>
   category: entertainment
   github_url: https://github.com/ExcuseMi/trmnl-twitch-dashboard-plugin
 - keyname: user_id
   field_type: number
   name: Twitch User Id
-  description: 'Find your User ID at <a href="https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/" target="_blank">streamweasels.com</a><br /><br /><strong>Your own ID</strong> — full dashboard: stream status, viewers, followers, subscribers, and chatters.<br /><strong>Someone else''s ID</strong> — public data only: stream status, viewers, and game. Subscriber and chatter counts require authentication as that channel''s owner.'
-  optional: true
+  description: 'Find your User ID at <a href="https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/" target="_blank">streamweasels.com</a><br /><br /><strong>Your own ID</strong> — full dashboard: stream status, viewers, followers, subscribers, and goals.<br /><strong>Someone else''s ID</strong> — public data only: stream status, viewers, and game. Subscriber counts & goals require authentication as that channel''s owner.'
+  optional: false
 name: Twitch Dashboard
 refresh_interval: 15
