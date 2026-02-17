@@ -4,12 +4,7 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: >-
-  https://api.twitch.tv/helix/users?id={{user_id}}
-  https://api.twitch.tv/helix/streams?user_id={{user_id}}
-  https://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}
-  https://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}
-  https://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}
+polling_url: "  https://api.twitch.tv/helix/users?id={{user_id}}\r\n  https://api.twitch.tv/helix/streams?user_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}"
 polling_headers: Authorization=Bearer {{oauth_access_token}}&Client-Id=v5iu0dpxojycn6aabbis0jr48hrjih
 polling_body: ''
 id: 243915
@@ -26,4 +21,4 @@ custom_fields:
   description: 'Find your User ID at <a href="https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/" target="_blank">streamweasels.com</a><br /><br /><strong>Your own ID</strong> — full dashboard: stream status, viewers, followers, subscribers, and chatters.<br /><strong>Someone else''s ID</strong> — public data only: stream status, viewers, and game. Subscriber and chatter counts require authentication as that channel''s owner.'
   optional: true
 name: Twitch Dashboard
-refresh_interval: 60
+refresh_interval: 15
