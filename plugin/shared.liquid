@@ -15,7 +15,9 @@
 
     <!-- Image takes remaining space with flex:1 - Shows on medium screens and larger -->
     {% if data.stream and data.stream.type == "live" and data.stream.thumbnail_url %}
-      {% assign thumb = data.stream.thumbnail_url | replace: '{width}', trmnl.device.width | replace: '{height}', trmnl.device.height %}
+      {% assign thumb_w = trmnl.device.width | default: 800 %}
+      {% assign thumb_h = trmnl.device.height | default: 450 %}
+      {% assign thumb = data.stream.thumbnail_url | replace: '{width}', thumb_w | replace: '{height}', thumb_h %}
       <div class="hidden md:block" data-thumb style="flex:1; min-height:0; display:flex; flex-direction:column;">
         <img src="{{ thumb }}" class="image image-dither rounded w--full" style="object-fit:cover;object-position:top; width:100%; flex:1;">
       </div>
