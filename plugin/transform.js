@@ -10,7 +10,7 @@ function transform(input) {
   function first(idx) {
     return idx && idx.data && idx.data[0];
   }
-  data.fetched_at_utc = input.trmnl.system.timestamp_utc;
+  data.fetched_at = new Date().toISOString();
 
   // IDX_0 = /users
   data.user = first(input.IDX_0);
