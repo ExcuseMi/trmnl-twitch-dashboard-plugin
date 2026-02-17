@@ -4,21 +4,21 @@ no_screen_padding: 'no'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-polling_url: "  https://api.twitch.tv/helix/users?id={{user_id}}\r\n  https://api.twitch.tv/helix/streams?user_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}"
+polling_url: "{% liquid\r\n  assign user_ids_array = user_ids | split: \",\"\r\n  assign random_index = \"now\" | date: \"%s\" | modulo: user_ids_array.size \r\n  assign user_id = user_ids_array[random_index] | strip\r\n  assign user_id_as_number = user_id | plus: 0\r\n%}\r\n{% if user_id and user_id != \"\" and user_id_as_number > 0 %}\r\n  https://api.twitch.tv/helix/users?id={{user_id}}\r\n  https://api.twitch.tv/helix/streams?user_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels/followers?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/subscriptions?broadcaster_id={{user_id}}\r\n  https://api.twitch.tv/helix/channels?broadcaster_id={{user_id}}\r\n{% endif %}"
 polling_headers: Authorization=Bearer {{oauth_access_token}}&Client-Id=v5iu0dpxojycn6aabbis0jr48hrjih
 polling_body: ''
 id: 243915
 custom_fields:
 - keyname: about_plugin
-  name: About This Plugin
   field_type: author_bio
-  description: Twitch Dashboard for TRMNL — monitor your stream status, viewers, followers and subscribers at a glance.<br /><strong>Requires OAuth authentication!</strong>
+  name: About This Plugin
+  description: 'Monitor Twitch streams at a glance: view stream status, viewer counts, followers, and subscriber stats.<br /><br /><strong>Requires OAuth authentication for full access.</strong>'
   category: entertainment
   github_url: https://github.com/ExcuseMi/trmnl-twitch-dashboard-plugin
-- keyname: user_id
-  field_type: number
-  name: Twitch User Id
-  description: 'Find your User ID at <a href="https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/" target="_blank">streamweasels.com</a><br /><br /><strong>Your own ID</strong> — full dashboard: stream status, viewers, followers, subscribers, and goals.<br /><strong>Someone else''s ID</strong> — public data only: stream status, viewers, and game. Subscriber counts & goals require authentication as that channel''s owner.'
-  optional: false
+- keyname: user_ids
+  field_type: multi_string
+  name: User ID(s)
+  description: Enter one or more Twitch User IDs.<br />Find IDs at <a href="https://www.streamweasels.com/tools/convert-twitch-username-to-user-id/">streamweasels.com</a>.<br /><br /><strong>Your own ID:</strong> Full dashboard with stream status, viewer count, followers, subscribers, and goals.<br /><strong>Other channels:</strong> Public data only—stream status, viewers, and current game. Follower/subscriber counts and goals require OAuth authentication as that channel's owner.
+  placeholder: '38871579'
 name: Twitch Dashboard
-refresh_interval: 15
+refresh_interval: 60
