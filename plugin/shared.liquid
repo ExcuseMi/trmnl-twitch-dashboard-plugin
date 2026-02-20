@@ -121,7 +121,7 @@
       {% endif %}
 
       <!-- About and Stats Row -->
-      <div class="flex flex--row gap--xsmall w--full mt--1" style="align-items:stretch;">
+      <div class="flex flex--row gap--xsmall w--full stretch-x" style="align-items:stretch;">
         <div class="bg--gray-60 p--2 rounded flex flex--col text--left stretch-x {% if size == "small" %}sm:portrait:hidden md:portrait:hidden{% endif %} lg:block" style="flex:1;align-items:stretch;">
           <span class="title title--small">About</span>
           <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;flex:1;">
@@ -130,7 +130,7 @@
         </div>
        
         <!-- Followers -->
-        <div class="bg--gray-60 p--2 rounded flex flex--col text--left stretch-x" style="flex-shrink:0;align-items:flex-start;">
+        <div class="bg--gray-60 p--2 rounded flex flex--col text--left stretch-x {% if size == "small" %}sm:portrait:hidden md:portrait:hidden{% endif %} lg:block" style="flex:1;align-items:stretch;">
           <span class="title title--small">Followers</span>
           <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
             <span class="value value--small value--tnums">{{ data.followers.display | default: "0" }}</span>
@@ -139,7 +139,7 @@
 
         <!-- Subscribers -->
         {% if data.subscribers and data.subscribers.total > 0 %}
-          <div class="bg--gray-60 p--2 rounded flex flex--col text--left stretch-x" style="flex-shrink:0;align-items:flex-start;">
+        <div class="bg--gray-60 p--2 rounded flex flex--col text--left stretch-x {% if size == "small" %}sm:portrait:hidden md:portrait:hidden{% endif %} lg:block" style="flex:1;align-items:stretch;">
             <span class="title title--small">Subscribers</span>
             <div class="bg--white p--1 rounded w--full" style="box-sizing:border-box;">
               <span class="value value--small value--tnums">{{ data.subscribers.display | default: "0" }}</span>
