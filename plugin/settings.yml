@@ -12,6 +12,7 @@ custom_fields:
 - keyname: about_plugin
   field_type: author_bio
   name: About This Plugin
+  help_text: TRMNL X Ready
   description: 'Monitor Twitch streams at a glance: view stream status, viewer counts, followers, and subscriber stats.<br /><br /><strong>Requires OAuth authentication for full access.</strong>'
   category: entertainment
   github_url: https://github.com/ExcuseMi/trmnl-twitch-dashboard-plugin
