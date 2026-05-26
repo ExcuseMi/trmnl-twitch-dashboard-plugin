@@ -2,7 +2,7 @@
 <!-- PLUGIN_STATS_START -->
 ## 🚀 TRMNL Plugin(s)
 
-*Last updated: 2026-05-25 09:55:32 UTC*
+*Last updated: 2026-05-26 09:41:39 UTC*
 
 
 ## <img src="assets/plugin-images/243915_icon.png" alt="Twitch Dashboard icon" width="32"/> [Twitch Dashboard](https://usetrmnl.com/recipes/243915)
